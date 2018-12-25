@@ -349,7 +349,23 @@ client.on('ready', () => {
       console.log(`ON ${client.guilds.size} Servers '     Script By : EX Clan ' `);
     console.log(`----------------`);
   console.log(`Logged in as ${client.user.tag}!`);
-client.user.setGame(` !&play |   !KingsServer`,"http://twitch.tv/ !&play")
+  client.on('ready', function(){
+    var ms = 1000 ;
+    var setGame = [`${prefix}h | KingsServer `,` ${prefix}he | KingsServer `,`${prefix}hel | KingsServer `,`${prefix}help | KingsServer `];
+    var i = -1;
+    var j = 0;
+    setInterval(function (){
+        if( i == -1 ){
+            j = 1;
+        }
+        if( i == (setGame.length)-1 ){
+            j = -1;
+        }
+        i = i+j;
+        client.user.setGame(setGame[i],`http://twitch.tv/idk`);
+    }, ms);1000
+
+});
 client.user.setStatus("dnd")
 });
 
