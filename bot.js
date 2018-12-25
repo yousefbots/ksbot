@@ -349,7 +349,7 @@ client.on('ready', () => {
       console.log(`ON ${client.guilds.size} Servers '     Script By : EX Clan ' `);
     console.log(`----------------`);
   console.log(`Logged in as ${client.user.tag}!`);
-client.user.setGame(`1play |  !M help`,"http://twitch.tv/MHELP")
+client.user.setGame(`!M help |  !M help`,"http://twitch.tv/MHELP")
 client.user.setStatus("dnd")
 });
 
