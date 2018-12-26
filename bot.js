@@ -20,7 +20,7 @@ const gif = require("gif-search");
 
 const client = new Discord.Client({disableEveryone: true});
 
-const prefix = " !&";
+const prefix = "!*";
 /////////////////////////
 ////////////////////////
 
@@ -342,11 +342,12 @@ client.on('message', message => {
     }
 });
 
+
 client.on('ready', () => {
    console.log(`----------------`);
       console.log(`Desert Bot- Script By : EX Clan`);
         console.log(`----------------`);
-      console.log(`ON ${client.guilds.size} Servers '     Script By : EX Clan ' `);
+      console.log(`ON ${client.guilds.size} Servers '     Script By : yousef ' `);
     console.log(`----------------`);
   console.log(`Logged in as ${client.user.tag}!`);
   client.on('ready', function(){
