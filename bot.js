@@ -20,7 +20,7 @@ const gif = require("gif-search");
 
 const client = new Discord.Client({disableEveryone: true});
 
-const prefix = "!*";
+const prefix = "!&";
 /////////////////////////
 ////////////////////////
 
@@ -342,15 +342,23 @@ client.on('message', message => {
     }
 });
 
+client.on('message', message => {
+	 var prefix = "!&"
+            if (message.content.startsWith(prefix + "help")) {
+     let embed = new Discord.RichEmbed()
+.setThumbnail(message.author.avatarURL)
+.addField('     **(1)-!&play** ' ,' **تفتح موسيقي** ')
+.addField('     **(2)-!&skip**  ' ,' **تحول للاغنيه البعدها** ')
+.addField('     **(3)-!&stop** ' , '**تخرج البوت من الروم**') 
+.addField('     **(4)-!&pause** ' , '**ايقاف الاغنيه**') 
+.addField('     **(5)-!&resume** ' ,' ** تشغيل الاغنيه** ')
+.addField('     **(6)-!&vol** ' ,' ** تعلي او توطي الصوت** ')
+.setColor('#ff0004')
+  message.channel.sendEmbed(embed);
+    }
+});
 
-client.on('ready', () => {
-   console.log(`----------------`);
-      console.log(`Desert Bot- Script By : EX Clan`);
-        console.log(`----------------`);
-      console.log(`ON ${client.guilds.size} Servers '     Script By : yousef ' `);
-    console.log(`----------------`);
-  console.log(`Logged in as ${client.user.tag}!`);
-  client.on('ready', function(){
+ client.on('ready', function(){
     var ms = 1000 ;
     var setGame = [`${prefix}h | KingsServer `,` ${prefix}he | KingsServer `,`${prefix}hel | KingsServer `,`${prefix}help | KingsServer `];
     var i = -1;
@@ -366,8 +374,6 @@ client.on('ready', () => {
         client.user.setGame(setGame[i],`http://twitch.tv/idk`);
     }, ms);1000
 
-});
-client.user.setStatus("dnd")
 });
 
 client.login(process.env.BOT_TOKEN);
